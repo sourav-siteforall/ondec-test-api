@@ -7,12 +7,9 @@ const app = express()
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send("hello server")
-})
-
-app.get('/health', (req, res) => {
-    res.send("ok")
+app.use((req, res) => {
+    console.log("Url: ",req.method," " ,req.url," ", new Date())
+    res.status(200).send("ok");
 })
 
 
