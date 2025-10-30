@@ -7,9 +7,10 @@ const _sodium = require('libsodium-wrappers');
 
 const port = process.env.SERVER_PORT; // Port on which the server will listen
 const ENCRYPTION_PRIVATE_KEY =process.env.ENCRYPTION_PRIVATE_KEY;
-const ONDC_PUBLIC_KEY =process.env.ENCRYPTION_PUBLIC_KEY;
+const ONDC_PUBLIC_KEY ="MCowBQYDK2VuAyEAduMuZgmtpjdCuxv+Nc49K0cB6tL/Dj3HZetvVN7ZekM=";
 const REQUEST_ID = '6a6abf53-674f-4d6d-a52b-62e3fda55e04';
 const SIGNING_PRIVATE_KEY =process.env.SIGNING_PRIVATE_KEY;
+
 const SIGNING_PUBLIC_KEY ="7ay2TlsSI51QN8oksNK5IMoq+Pr67y9vBb+0n8RFUBk=";
 
 const htmlFile = `
