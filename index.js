@@ -58,6 +58,7 @@ app.use((req,res,next)=>{
 app.post('/ondc/on_subscribe', function (req, res) {
   console.log("enter---- in on_subscribe")
   const { challenge } = req.body; // Extract the 'challenge' property from the request body
+  console.log({challenge});
   const answer = decryptAES256ECB(sharedKey, challenge); // Decrypt the challenge using AES-256-ECB
   const resp = { answer: answer };
   res.status(200).json(resp); // Send a JSON response with the answer
