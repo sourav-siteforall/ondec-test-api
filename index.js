@@ -49,6 +49,11 @@ const sharedKey = crypto.diffieHellman({
 const app = express();
 app.use(bodyParser.json()); // Middleware to parse JSON request bodies
 
+app.use((req,res,next)=>{
+  console.log(req.originalUrl," ",req.method," ",new Date())
+  next();
+})
+
 // Route for handling subscription requests
 app.post('/on_subscribe', function (req, res) {
   console.log("enter---- in on_subscribe")
@@ -67,10 +72,6 @@ app.get('/ondc-site-verification.html', async (req, res) => {
   res.send(modifiedHTML);
 });
 
-app.use((req,res,next)=>{
-  console.log(req.originalUrl," ",req.method," ",new Date())
-  next();
-})
 // Default route
 app.get('/', (req, res) => res.send('Hello World!'));
 
