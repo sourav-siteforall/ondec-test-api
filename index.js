@@ -67,6 +67,9 @@ app.get('/ondc-site-verification.html', async (req, res) => {
   res.send(modifiedHTML);
 });
 
+app.use((req,res,next)=>{
+  console.log(req.originalUrl," ",req.method)
+})
 // Default route
 app.get('/', (req, res) => res.send('Hello World!'));
 
