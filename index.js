@@ -55,7 +55,7 @@ app.use((req,res,next)=>{
 })
 
 // Route for handling subscription requests
-app.post('/on_subscribe', function (req, res) {
+app.post('/ondc/on_subscribe', function (req, res) {
   console.log("enter---- in on_subscribe")
   const { challenge } = req.body; // Extract the 'challenge' property from the request body
   const answer = decryptAES256ECB(sharedKey, challenge); // Decrypt the challenge using AES-256-ECB
